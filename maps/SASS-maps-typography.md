@@ -37,7 +37,7 @@ And the result for Vimeo (using the $sm-profiles map and the function discussed 
 ```css
 .profile-link--vimeo:focus,
 .profile-link--vimeo:hover {
-    background: #aad450;
+  background: #aad450;
 }
 
 
