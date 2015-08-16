@@ -1,0 +1,46 @@
+div .code-example {
+  font-family: 'sourcecodepro-medium-webfont', monospace;
+  display: block;
+  background: #666;
+  color: white;
+  padding: 20px;
+  white-space: pre;
+}
+
+pre {
+  white-space: pre;
+
+  code {
+    font-family: 'sourcecodepro-medium-webfont', monospace;
+    font-size: 80%;
+  }
+}
+
+// for content editable styles
+style {
+  background: #333;
+  clear:both;
+  color: white;
+  display: block;
+  font-family: 'sourcecodepro-medium-webfont', monospace;
+  margin-bottom: .5em;
+  padding: 20px;
+  white-space: pre;
+}
+
+div .css-example {
+  counter-increment: css_count;
+
+  + p:before {
+    content: 'CSS Example ' counter(section_count) '-' counter(css_count) ': ';
+  }
+}
+
+iframe .cp_embed_iframe {
+  counter-increment: css_count;
+
+  + p:before {
+    content: 'CSS Example ' counter(section_count) '-' counter(css_count) ': ';
+  }
+}
+

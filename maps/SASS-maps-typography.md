@@ -62,7 +62,9 @@ $p-font-sizes: (
 ```
 Although line-height values can be defined using any valid CSS unit (percentages, pixels, ems, etc.), "unitless" values are recommended and preferred.
 
-We then modify the mixin to include line height when generating the CSS.
+We then modify the mixin to include line height when generating the CSS. We do it using the [nth](http://sass-lang.com/documentation/Sass/Script/Functions.html#nth-instance_method) SASS function as it allow us to get a given element in a list, in this case the second element that correspond to line-height. 
+
+In order to make sure that there is a value for our line-height attribute, we test if the element in the map has more than one value (its length is greater than 1) and only add line-height if this is true. 
 
 
 ```sass
@@ -88,8 +90,7 @@ We then modify the mixin to include line height when generating the CSS.
 @mixin make-font-size($fs-font-size) {
   @if type-of($fs-font-size) == "list" {
     font-size: nth($fs-font-size, 1);
-    // If $fs-font-size is a list ($fs-font-size 
-    //has more than 1 value), include
+    // If $fs-font-size is a list, include
     // both font-size and line-height
     @if (length($fs-font-size) > 1) {
       line-height: nth($fs-font-size, 2);
@@ -109,6 +110,47 @@ p {
 }
 ```
 
+The result looks like this:
+
+```sass
+/* line 52, /Users/carlos/code/docs/maps-typography.scss */
+p {
+  font-size: 15px;
+  line-height: 1.3; }
+  
+  @media screen and (min-width: 480px) {
+    p {
+      font-size: 16px; }
+    }
+
+  @media screen and (min-width: 700px) {
+    p {
+      font-size: 17px;
+      line-height: 1.4; }
+    }
+
+  @media screen and (min-width: 900px) {
+    /* line 52, /Users/carlos/code/docs/maps-typography.scss */
+    p {
+      font-size: 18px; }
+    }
+
+  @media screen and (min-width: 1024px) {
+    /* line 52, /Users/carlos/code/docs/maps-typography.scss */
+    p {
+      font-size: 19px;
+      line-height: 1.45; }
+    }
+
+  @media screen and (min-width: 1440px) {
+    /* line 52, /Users/carlos/code/docs/maps-typography.scss */
+    p {
+      font-size: 20px; }
+    }
+
+/*# sourceMappingURL=maps-typography.css.map */
+```
+
 * [http://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/](http://www.smashingmagazine.com/2015/06/responsive-typography-with-sass-maps/)
 * [http://www.sitepoint.com/using-sass-maps/](http://www.sitepoint.com/using-sass-maps/)
-
+* [SASS Typography repository](
