@@ -1,0 +1,11 @@
+display:
+    access: ["public", "private"]
+    alias: false
+    watermark: false
+
+theme: "default"
+groups:
+    code: "Code"
+    fonts: "Fonts"
+    columns: "Columns"
+    maps: "Maps"
