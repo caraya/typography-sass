@@ -1,0 +1,15 @@
+/* line 83, /Users/carlos/code/typography-sass/code/code.scss */
+div .css-example {
+  counter-increment: css_count; }
+  /* line 86, /Users/carlos/code/typography-sass/code/code.scss */
+  div .css-example + p:before {
+    content: "CSS Example " counter(section_count) "-" counter(css_count) ": "; }
+
+/* line 91, /Users/carlos/code/typography-sass/code/code.scss */
+iframe .cp_embed_iframe {
+  counter-increment: css_count; }
+  /* line 94, /Users/carlos/code/typography-sass/code/code.scss */
+  iframe .cp_embed_iframe + p:before {
+    content: "CSS Example " counter(section_count) "-" counter(css_count) ": "; }
+
+/*# sourceMappingURL=code.css.map */

@@ -1,9 +1,17 @@
+////
+/// @group Maps
+/// @author [Carlos Araya](http://publishing-project.rivendellweb.net/)
+////
+
+/// Defines the break points
+/// @access public
 $breakpoints: (
   small : 480px,
   medium: 700px,
   large : 1024px
 );
 
+///Defines the different sizes for p elements
 $p-font-sizes: (
   null  : (15px, 1.3),
   small : 16px,
@@ -13,6 +21,46 @@ $p-font-sizes: (
   1440px: 20px,
 );
 
+/// Creates the mediaqueries for the combination of `$breakpoints` and `p-font-sizes`. It also takes into account if we have line height attributes for a given breakpoint and adds any value present in `p-font-sizes` but not in ~breakpoints by using the key from `p-font-sizes` as the value for the media query.
+/// @example scss - Defining the font sizes for p elements
+///  p {
+///     @include font-size($p-font-sizes);
+///  }
+/// @example css - Result from example above
+///   p {
+///     font-size: 15px;
+///     line-height: 1.3;
+///   }
+///
+///   @media screen and (min-width: 480px) {
+///     p {
+///       font-size: 16px; }
+///   }
+///
+///   @media screen and (min-width: 700px) {
+///     p {
+///       font-size: 17px;
+///       line-height: 1.4; }
+///   }
+///
+///  @media screen and (min-width: 900px) {
+///    p {
+///      font-size: 18px; }
+///  }
+///
+///  @media screen and (min-width: 1024px) {
+///    p {
+///      font-size: 19px;
+///      line-height: 1.45; }
+///  }
+///
+///  @media screen and (min-width: 1440px) {
+///    p {
+///      font-size: 20px; }
+///  }
+/// @access public
+/// @param {String} $fs-map - map of sizes and breakpoints
+/// @param {String} $fs-breakpoints [$breakpoints] - pre defined breakpoints
 @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == null {
@@ -33,7 +81,10 @@ $p-font-sizes: (
   }
 }
 
-// Utility function for mixin font-size
+/// Mixin that actually creates the media queries
+/// @access public
+/// @param {String} $fs-font-size - pre defined font-sizes
+
 @mixin make-font-size($fs-font-size) {
   @if type-of($fs-font-size) == "list" {
 
@@ -49,6 +100,3 @@ $p-font-sizes: (
   }
 }
 
-p {
-  @include font-size($p-font-sizes);
-}

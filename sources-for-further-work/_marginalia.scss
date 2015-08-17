@@ -1,0 +1,111 @@
+/*
+	Formating for different types of marginalia content
+*/
+
+aside {
+	width: 100%;
+	padding-bottom: .5em;
+	padding-top: .5em;
+	border-top: 3px double #ddd;
+	border-bottom: 3px double #ddd;
+	color: #666;
+	line-height: 1.4em;
+	font-size: 1.8em;
+}
+
+aside.pull {
+		margin-left: -20%;
+		margin-top: .2em;
+		margin-bottom: .5em;
+	}
+blockquote {
+  margin-left: 1em;
+  margin-bottom: 1em;
+  font-style: italic;
+
+	.opening {
+		font-size: 2em;
+		text-align: center;
+		border-top: 3px double #ddd;
+		padding-top: 2em;
+		border-bottom: 3px double #ddd;
+		padding-bottom: 2em;
+		margin-bottom: 10em;
+		}
+}
+/*
+	Do I even need this?
+
+blockquote.info {
+  margin: 0 auto;
+  width: 80%;
+  padding: 30px;
+  border: 1px solid #000;
+
+	ul.info-list {
+	  list-style: none;
+	}
+
+	ul.info-list li {
+		text-indent: 0px;
+	}
+}
+
+blockquote.pullquote {
+  float: left;
+  width: 350px;
+  color: #666;
+  text-align: right;
+  margin-left: -200px;
+  margin-top: -7px;
+  margin-right: 20px;
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
+blockquote.pullquote.small {
+  width: 230px;
+  margin-left: -200px;
+  margin-right: 20px;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  text-align: right;
+  margin-top: 2px double #666;
+  margin-bottom: 2px double #666;
+	float: left;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+*/
+
+.margin-notes,
+.content-left {
+  width: 230px;
+  margin-left: -230px;
+  margin-right: 20px;
+  text-align: right;
+  font-size: .75em;
+}
+
+.margin-notes-right,
+.content-right {
+  width: 230px;
+  margin-left: 760px;
+  margin-right: -20px;
+  text-align: left;
+  font-size: .75em;
+  position: absolute;
+}
+
+.content-right {
+  width: 230px;
+  margin-left: 760px;
+  margin-right: -20px;
+  text-align: left;
+  font-size: .75em;
+  position: absolute;
+}
+
+.content-right ul,
+.content-left ul {
+  list-style: none;
+}
