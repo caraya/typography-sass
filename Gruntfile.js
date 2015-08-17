@@ -58,6 +58,17 @@
         }
       },
 
+      sassdoc: {
+        default: {
+          src: '.',
+          options: {
+            dest: 'sassdocs',
+            display: {
+              access: ['public', 'private'],
+            }
+          }
+        }
+      },
       // GH-PAGES TASK
       // Push the specified content into the repositories
       // gh-pages branch
@@ -88,26 +99,7 @@
           src: 'css/*.css',
           dest: 'css/*.css'
         }
-      },
-
-      // UNCSS will analyzes the your HTML pages and
-      // remove from the CSS all the classes that are
-      // not used in any of your HTML pages
-      //
-      // This task needs to be run in the processed CSS
-      // rather than the SCSS files
-      //
-      //See https://github.com/addyosmani/grunt-uncss
-      // for more information
-      uncss: {
-        dist: {
-          files: {
-            'dist/css/main.css': [ 'dist/*.html' ]
-          }
-        }
-      },
-
-
+      }
     });
     // closes initConfig
 
@@ -117,16 +109,16 @@
     grunt.task.registerTask(
       'lint',
       [ 'scsslint' ]
-    )
+    );
 
     grunt.task.registerTask(
       'process',
-      [ 'scsslint', 'sass:dev', 'autoprefixer' ]
+      [ 'scsslint', 'sassdoc', 'sass:dev', ]
     );
 
     grunt.task.registerTask(
       'post-process',
-      [ 'autoprefixer', 'uncss' ]
+      [ 'autoprefixer']
     );
 
   };

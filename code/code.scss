@@ -56,7 +56,6 @@
 /// @param {String} $color [white] - text-color
 /// @param {String} $padding [20px] - padding amount
 /// @param {String} $whitespace [pre] - how to handle white space
-
 @mixin code-inline() {
   @include code-base();
   display: inline;
@@ -78,24 +77,3 @@
   clear: both;
   margin-bottom: .5em;
 }
-
-
-div .css-example {
-  counter-increment: css_count;
-
-  + p:before {
-    content: 'CSS Example ' counter(section_count) '-' counter(css_count) ': ';
-  }
-}
-
-iframe .cp_embed_iframe {
-  counter-increment: css_count;
-
-  + p:before {
-    content: 'CSS Example ' counter(section_count) '-' counter(css_count) ': ';
-  }
-}
-
-
-
-
