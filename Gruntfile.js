@@ -59,12 +59,12 @@
       },
 
       sassdoc: {
-        default: {
+        all: {
           src: '**/*.scss',
           options: {
             dest: 'sassdocs',
             display: {
-              access: ['public', 'private'],
+              access: ['public', 'private']
             }
           }
         }
@@ -109,7 +109,7 @@
     grunt.task.registerTask(
       'default',
       [ 'sassdoc' ]
-    )
+    );
 
     grunt.task.registerTask(
       'lint',
@@ -118,7 +118,7 @@
 
     grunt.task.registerTask(
       'process',
-      [ 'scsslint', 'sassdoc', 'sass:dev', ]
+      [ 'scsslint', 'sassdoc', 'sass:dev' ]
     );
 
     grunt.task.registerTask(
