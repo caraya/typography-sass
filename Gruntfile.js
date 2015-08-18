@@ -60,7 +60,7 @@
 
       sassdoc: {
         default: {
-          src: '.',
+          src: '**/*.scss',
           options: {
             dest: 'sassdocs',
             display: {
@@ -105,6 +105,11 @@
 
     // CUSTOM TASKS
     // Usually a combination of one or more tasks defined above
+
+    grunt.task.registerTask(
+      'default',
+      [ 'sassdoc' ]
+    )
 
     grunt.task.registerTask(
       'lint',
