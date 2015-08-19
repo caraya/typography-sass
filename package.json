@@ -4,7 +4,7 @@
   "description": "SASS tools for typography",
   "main": "index.js",
   "scripts": {
-    "postinstall": "grunt --force"
+    "postinstall": "grunt --force --verbose"
   },
   "repository": {
     "type": "git",

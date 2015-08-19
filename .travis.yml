@@ -6,7 +6,11 @@
 language: node_js
 node_js: '0.12'
 before_install:
+  # install scsslint gem to make the grunt task happy
+  - gem install scsslint
+  # why do we need to install npm, doesn't it come with node?
   - npm install -g npm
+  # Install grunt and grunt-cli globally
   - npm install -g grunt
   - npm install -g grunt-cli
 install: npm install
