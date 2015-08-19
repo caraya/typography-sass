@@ -75,7 +75,7 @@
       'gh-pages': {
         options: {
           message: 'Content committed from Grunt gh-pages',
-          base: 'sassdoc',
+          base: 'sassdocs',
           dotfiles: true
         },
         // These files will get pushed to the `
