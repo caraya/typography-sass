@@ -4,7 +4,7 @@
   "description": "SASS tools for typography",
   "main": "index.js",
   "scripts": {
-    "prestart": "npm install"
+    "postinstall": "grunt"
   },
   "repository": {
     "type": "git",

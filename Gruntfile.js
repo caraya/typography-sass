@@ -115,25 +115,25 @@
       'lint',
       [ 'scsslint' ]
     );
-    
+
     // The following tasks are optional
     // Convert SCSS to CSS for comparison, test
     grunt.task.registerTask(
       'convert',
       [ 'sass:dev' ]
     );
-    
-    // If we choose not to manually prefix rules. Then make sure you run autoprefixer 
+
+    // If we choose not to manually prefix rules. Then make sure you run autoprefixer
     // to add prefixes where appropriate
     grunt.task.registerTask(
       'post-process',
       [ 'autoprefixer']
     );
-    
+
     // Run everything
     grunt.task.registerTask(
       'full',
-      [ 'scsslint', 'sassdoc' 'gh-pages', 'sass-dev', 'autoprefixer' ]
+      [ 'scsslint', 'sassdoc', 'gh-pages', 'sass-dev', 'autoprefixer' ]
     );
 
   };
