@@ -4,7 +4,7 @@
   "description": "SASS tools for typography",
   "main": "index.js",
   "scripts": {
-    "postinstall": "grunt"
+    "postinstall": "compile.sh"
   },
   "repository": {
     "type": "git",
