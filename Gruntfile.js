@@ -51,7 +51,14 @@
       //
       // I've chosen not to fail on errors or warnings.
       scsslint: {
-        allFiles: [ '**/*.scss' ],
+        allFiles: [
+          'code/*.scss',
+          'columns/*.scss',
+          'counters/*.scss',
+          'fonts/*.scss',
+          'maps/*.scss',
+          'mixins/*.scss'
+        ],
         options: {
           force: true,
           colorizeOutput: true
@@ -60,7 +67,14 @@
 
       sassdoc: {
         all: {
-          src: '**/*.scss',
+          src: [
+            'code/*.scss',
+            'columns/*.scss',
+            'counters/*.scss',
+            'fonts/*.scss',
+            'maps/*.scss',
+            'mixins/*.scss'
+          ],
           options: {
             dest: 'sassdocs',
             display: {
