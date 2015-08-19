@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "description": "SASS tools for typography",
   "main": "index.js",
-  "scripts": {
-    "postinstall": "grunt --force --verbose"
-  },
+  "scripts": { },
   "repository": {
     "type": "git",
     "url": "https://github.com/caraya/typography-sass.git"
