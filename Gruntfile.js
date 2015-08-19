@@ -25,7 +25,10 @@
           files: [ {
             expand: true,
             cwd: '.',
-            src: [ '**/*.scss'],
+            src: [
+              '**/*.scss',
+              '!**/node_modules'
+            ],
             dest: 'css',
             ext: '.css'
           }]
@@ -37,7 +40,10 @@
           files: [ {
             expand: true,
             cwd: 'sass',
-            src: [ '**/*.scss'],
+            src: [
+              '**/*.scss',
+              '!**/node_modules'
+            ],
             dest: 'css',
             ext: '.css'
           }]
@@ -51,13 +57,8 @@
       //
       // I've chosen not to fail on errors or warnings.
       scsslint: {
-        allFiles: [
-          'code/*.scss',
-          'columns/*.scss',
-          'counters/*.scss',
-          'fonts/*.scss',
-          'maps/*.scss',
-          'mixins/*.scss',
+        src: [
+          '**/*.scss',
           '!**/node_modules'
         ],
         options: {
@@ -69,12 +70,7 @@
       sassdoc: {
         all: {
           src: [
-            'code/*.scss',
-            'columns/*.scss',
-            'counters/*.scss',
-            'fonts/*.scss',
-            'maps/*.scss',
-            'mixins/*.scss',
+            '**/*.scss',
             '!**/node_modules'
           ],
           options: {
