@@ -57,7 +57,8 @@
           'counters/*.scss',
           'fonts/*.scss',
           'maps/*.scss',
-          'mixins/*.scss'
+          'mixins/*.scss',
+          '!**/node_modules'
         ],
         options: {
           force: true,
@@ -73,7 +74,8 @@
             'counters/*.scss',
             'fonts/*.scss',
             'maps/*.scss',
-            'mixins/*.scss'
+            'mixins/*.scss',
+            '!**/node_modules'
           ],
           options: {
             dest: 'sassdocs',
@@ -94,7 +96,7 @@
         },
         // These files will get pushed to the `
         // gh-pages` branch (the default)
-        src: ['**/*']
+        src: [ 'sassdocs/**/*' ]
       },
 
       // OPTIONAL TASKS //
@@ -112,6 +114,18 @@
           flatten: true,
           src: 'css/*.css',
           dest: 'css/*.css'
+        }
+      },
+
+      cssmin: {
+        target: {
+          files: [{
+            expand: true,
+            cwd: 'css',
+            src: ['*.css', '!*.min.css'],
+            dest: 'css',
+            ext: '.min.css'
+          }]
         }
       }
     });
@@ -141,7 +155,7 @@
     // to add prefixes where appropriate
     grunt.task.registerTask(
       'post-process',
-      [ 'autoprefixer']
+      [ 'autoprefixer', 'cssmin' ]
     );
 
     // Run everything
