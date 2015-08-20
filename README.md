@@ -1,6 +1,6 @@
 # SASS exercises for typography
 
-[![Build Status](https://travis-ci.org/caraya/typography-sass.svg?branch=master)](https://travis-ci.org/caraya/typography-sass)
+[![Documentation Build Status](https://travis-ci.org/caraya/typography-sass.svg?branch=master)](https://travis-ci.org/caraya/typography-sass)
 
 A lot of time I find myself writing mixins or SASS code that I think I may want to reuse or I may want to incorporate in a blog post or other type of project. 
 

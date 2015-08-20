@@ -26,8 +26,13 @@
             expand: true,
             cwd: '.',
             src: [
-              '**/*.scss',
-              '!**/node_modules'
+              'code/*.scss',
+              'columns/*.scss',
+              'counters/*.scss',
+              'fonts/*.scss',
+              'maps/*.scss',
+              'media-queries/*.scss',
+              'mixins/*.scss'
             ],
             dest: 'css',
             ext: '.css'
@@ -41,8 +46,13 @@
             expand: true,
             cwd: 'sass',
             src: [
-              '**/*.scss',
-              '!**/node_modules'
+              'code/*.scss',
+              'columns/*.scss',
+              'counters/*.scss',
+              'fonts/*.scss',
+              'maps/*.scss',
+              'media-queries/*.scss',
+              'mixins/*.scss'
             ],
             dest: 'css',
             ext: '.css'
@@ -58,8 +68,13 @@
       // I've chosen not to fail on errors or warnings.
       scsslint: {
         src: [
-          '**/*.scss',
-          '!**/node_modules'
+          'code/*.scss',
+          'columns/*.scss',
+          'counters/*.scss',
+          'fonts/*.scss',
+          'maps/*.scss',
+          'media-queries/*.scss',
+          'mixins/*.scss'
         ],
         options: {
           force: true,
@@ -70,8 +85,13 @@
       sassdoc: {
         all: {
           src: [
-            '**/*.scss',
-            '!**/node_modules'
+            'code/*.scss',
+            'columns/*.scss',
+            'counters/*.scss',
+            'fonts/*.scss',
+            'maps/*.scss',
+            'media-queries/*.scss',
+            'mixins/*.scss'
           ],
           options: {
             dest: 'sassdocs',

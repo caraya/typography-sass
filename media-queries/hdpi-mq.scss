@@ -3,7 +3,8 @@
 /// @author [Carlos Araya](http://publishing-project.rivendellweb.net/)
 ////
 
-/// Generic HDPI query to handle devices
+/// Generic HDPI query to handle devices.
+/// We could treat this as an extension of the generic-mq but I like to be explicit and there special prefixes to deal with when working with hdpi screens
 /// @access public
 /// @param {String} $ratio [1.3] - hdpi value.
 @mixin hdpi($ratio: 1.3) {

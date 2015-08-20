@@ -1,10 +1,14 @@
-/// Media query to handle iPhone 3 and other non-retina fonts
+////
+/// @group Media Queries
+/// @author [Carlos Araya](http://publishing-project.rivendellweb.net/)
+////
+
+/// Media query to handle iPhone 3 and other non-retina devices
 /// @access public
-/// @param {String} $font-family [sourcecodepro-medium-webfont] - font family to use as primary.
-/// @param {String} $bgcolor [#666] - background color
-/// @param {String} $color [white] - text-color
-/// @param {String} $padding [20px] - padding amount
-/// @param {String} $whitespace [pre] - how to handle white space
+/// @param {String} $orientation [all] - is the device in portrait or landscape mode or do we use this query for both?
+/// @param {String} $deviceMinWidth [320px] - minimum device size
+/// @param {String} $deviceMaxWidth [480px] - maximum device size
+/// @param {String} $devicePixelRatio [1] - pixels by physical pixel
 @mixin iphone3($orientation: all) {
  $deviceMinWidth: 320px;
  $deviceMaxWidth: 480px;
