@@ -1,5 +1,10 @@
-// Example using SASS maps to handle repetitive tasks
+////
+/// @group Maps
+/// @author [Carlos Araya](http://publishing-project.rivendellweb.net/)
+////
 
+/// Defines the social media profiles and associated colors
+/// @access public
 $sm-profiles: (
   facebook: #3b5998,
   flickr: #0063db,
@@ -11,6 +16,8 @@ $sm-profiles: (
   youtube: #b00
 );
 
+/// Uses the map above to create CSS pseudoclasses
+/// @access public
 @each $profile, $bgcolor in $sm-profiles {
   .profile-link--#{$profile}:focus,
   .profile-link--#{$profile}:hover {
