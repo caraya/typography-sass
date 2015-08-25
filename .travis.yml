@@ -2,7 +2,7 @@
 # See the following for more info
 # https://gist.github.com/travishorn/5869188 for issues with peer deps
 # https://github.com/npm/npm/issues/3958
-# http://stackoverflow.com/questions/21128478/run-grunt-build-command-on-travis-ci
+# http://stackoverflow.com/questions/21128478/run-grunt-build-command-on-travis-ci 
 language: node_js
 node_js: '0.12'
 before_install:
