@@ -26,7 +26,8 @@
             expand: true,
             cwd: '.',
             src: [
-              'blend/*.scss',
+              'vfx/*.scss',
+              'typography/*.scss',
               'code/*.scss',
               'columns/*.scss',
               'counters/*.scss',
@@ -47,7 +48,8 @@
             expand: true,
             cwd: 'sass',
             src: [
-              'blend/*.scss',
+              'vfx/*.scss',
+              'typography/*.scss',
               'code/*.scss',
               'columns/*.scss',
               'counters/*.scss',
@@ -70,7 +72,8 @@
       // I've chosen not to fail on errors or warnings.
       scsslint: {
         src: [
-          'blend/*.scss',
+          'vfx/*.scss',
+          'typography/*.scss',
           'code/*.scss',
           'columns/*.scss',
           'counters/*.scss',
@@ -88,7 +91,8 @@
       sassdoc: {
         all: {
           src: [
-            'blend/*.scss',
+            'vfx/*.scss',
+            'typography/*.scss',
             'code/*.scss',
             'columns/*.scss',
             'counters/*.scss',
