@@ -25,19 +25,8 @@
           files: [ {
             expand: true,
             cwd: '.',
-            src: [
-              'programming/*.scss',
-              'images/*.scss',
-              'vfx/*.scss',
-              'typography/*.scss',
-              'code/*.scss',
-              'columns/*.scss',
-              'counters/*.scss',
-              'fonts/*.scss',
-              'maps/*.scss',
-              'media-queries/*.scss',
-              'mixins/*.scss'
-            ],
+            src: ['**/*.scss'],
+
             dest: 'css',
             ext: '.css'
           }]
@@ -49,19 +38,7 @@
           files: [ {
             expand: true,
             cwd: 'sass',
-            src: [
-              'programming/*.scss',
-              'images/*.scss',
-              'vfx/*.scss',
-              'typography/*.scss',
-              'code/*.scss',
-              'columns/*.scss',
-              'counters/*.scss',
-              'fonts/*.scss',
-              'maps/*.scss',
-              'media-queries/*.scss',
-              'mixins/*.scss'
-            ],
+            src: ['**/*.scss'],
             dest: 'css',
             ext: '.css'
           }]
@@ -75,19 +52,7 @@
       //
       // I've chosen not to fail on errors or warnings.
       scsslint: {
-        src: [
-          'programming/*.scss',
-          'images/*.scss',
-          'vfx/*.scss',
-          'typography/*.scss',
-          'code/*.scss',
-          'columns/*.scss',
-          'counters/*.scss',
-          'fonts/*.scss',
-          'maps/*.scss',
-          'media-queries/*.scss',
-          'mixins/*.scss'
-        ],
+        src: ['**/*.scss'],
         options: {
           force: true,
           colorizeOutput: true
@@ -96,19 +61,7 @@
 
       sassdoc: {
         all: {
-          src: [
-            'programming/*.scss',
-            'images/*.scss',
-            'vfx/*.scss',
-            'typography/*.scss',
-            'code/*.scss',
-            'columns/*.scss',
-            'counters/*.scss',
-            'fonts/*.scss',
-            'maps/*.scss',
-            'media-queries/*.scss',
-            'mixins/*.scss'
-          ],
+          src: ['**/*.scss'],
           options: {
             dest: 'sassdocs',
             display: {
@@ -128,7 +81,7 @@
         },
         // These files will get pushed to the `
         // gh-pages` branch (the default)
-        src: [ '**/*' ]
+        src: ['**/*.scss'],
       },
 
       // OPTIONAL TASKS //
