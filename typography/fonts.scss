@@ -20,12 +20,12 @@
   // optional: for older browsers
   text-rendering: optimizeLegibility;
   // pre-Firefox 14+
-  -moz-font-feature-settings: "kern=1";
-  -webkit-font-feature-settings: "kern";
+  -moz-font-feature-settings: 'kern=1';
+  -webkit-font-feature-settings: 'kern';
   // Firefox 14+
-  -moz-font-feature-settings: "kern";
+  -moz-font-feature-settings: 'kern';
   // standard */
-  font-feature-settings: "kern";
+  font-feature-settings: 'kern';
   // Safari 7+, Firefox 24+, Chrome 33(?)+, Opera 21+*/
   font-kerning: normal;
 }
@@ -36,25 +36,25 @@
 ///  @include font-declaration('sourcecodepro-medium-webfont', '../fonts/sourcecodepro-medium-webfont');
 /// @example css - Result from example above
 ///  @font-face {
-///    font-family: "Roboto Slab";
-///      src: url("../fonts/robotoslab-regular-webfont.eot");
-///      src: url("../fonts/robotoslab-regular-webfont.eot?#iefix") format("embedded-opentype"),
-///      url("../fonts/robotoslab-regular-webfont.woff2") format("woff2"),
-///      url("../fonts/robotoslab-regular-webfont.woff") format("woff"),
-///      url("../fonts/robotoslab-regular-webfont.ttf") format("truetype"),
-///      url("../fonts/robotoslab-regular-webfont.svg#Roboto Slab") format("svg");
+///    font-family: 'Roboto Slab';
+///      src: url('../fonts/robotoslab-regular-webfont.eot');
+///      src: url('../fonts/robotoslab-regular-webfont.eot?#iefix') format('embedded-opentype'),
+///      url('../fonts/robotoslab-regular-webfont.woff2') format('woff2'),
+///      url('../fonts/robotoslab-regular-webfont.woff') format('woff'),
+///      url('../fonts/robotoslab-regular-webfont.ttf') format('truetype'),
+///      url('../fonts/robotoslab-regular-webfont.svg#Roboto Slab') format('svg');
 ///    font-weight: normal;
 ///    font-style: normal;
 ///  }
 ///
 ///  @font-face {
-///    font-family: "sourcecodepro-medium-webfont";
-///      src: url("../fonts/sourcecodepro-medium-webfont.eot");
-///      src: url("../fonts/sourcecodepro-medium-webfont.eot?#iefix") format("embedded-opentype"),
-///      url("../fonts/sourcecodepro-medium-webfont.woff2") format("woff2"),
-///      url("../fonts/sourcecodepro-medium-webfont.woff") format("woff"),
-///      url("../fonts/sourcecodepro-medium-webfont.ttf") format("truetype"),
-///      url("../fonts/sourcecodepro-medium-webfont.svg#sourcecodepro-medium-webfont") format("svg");
+///    font-family: 'sourcecodepro-medium-webfont';
+///      src: url('../fonts/sourcecodepro-medium-webfont.eot');
+///      src: url('../fonts/sourcecodepro-medium-webfont.eot?#iefix') format('embedded-opentype'),
+///      url('../fonts/sourcecodepro-medium-webfont.woff2') format('woff2'),
+///      url('../fonts/sourcecodepro-medium-webfont.woff') format('woff'),
+///      url('../fonts/sourcecodepro-medium-webfont.ttf') format('truetype'),
+///      url('../fonts/sourcecodepro-medium-webfont.svg#sourcecodepro-medium-webfont') format('svg');
 ///    font-weight: normal;
 ///    font-style: normal;
 ///  }
@@ -63,8 +63,8 @@
 /// @param {String} $font-file-name - File name for the font we are loading
 /// @param {String} $weight [normal] - Bold or normal
 /// @param {String} $style [normal] - Italic or normal
-@mixin font-declaration($font-family,  $font-file-name, $weight:normal, $style:normal) {
-@font-face {
+@mixin font-declaration($font-family, $font-file-name, $weight:normal, $style:normal) {
+  @font-face {
     font-family: '#{$font-family}';
     src: url('#{$font-file-name}.eot');
     src: url('#{$font-file-name}.eot?#iefix') format('embedded-opentype'),
@@ -88,10 +88,9 @@
 /// @param {String} $font-file-name - File name for the font we are loading
 /// @param {String} $weight [normal] - Bold or normal
 /// @param {String} $padding [style] - Italic or normal
-@mixin ebook-font-declaration($font-family,  $font-file-name, $weight:normal, $style:normal) {
+@mixin ebook-font-declaration($font-family, $font-file-name, $weight:normal, $style:normal) {
   font-family: '#{$font-family}';
-  src:
-    local('#{$font-file-name}.ttf') format('truetype');
+  src: local('#{$font-file-name}.ttf') format('truetype');
   font-weight: $weight;
   font-style: $style;
 

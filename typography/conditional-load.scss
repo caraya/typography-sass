@@ -21,15 +21,11 @@ $stack-pt-serif   : 'PT Serif', serif;
 ///  font-family: $stack-pt-serif;
 ///}
 /// @access public
-// Font URLs
-@function conditional_load() {
-  // Import if Google Font URLs are defined
-  @if variable-exists(font-google-prim) {
-    @import url($font-google-prim);
-  }
-  @if variable-exists(font-google-sec) {
-    @import url($font-google-sec);
-  }
+@if variable-exists(font-google-prim) {
+  @import url($font-google-prim);
+}
+@if variable-exists(font-google-sec) {
+  @import url($font-google-sec);
 }
 
 
