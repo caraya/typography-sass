@@ -36,7 +36,7 @@
 
 /// Border radius mixin to keep your code DRY
 /// @access public
-/// @parameter $radius [5px] - how much radius
+/// @parameter {String} $radius [5px] - how much radius
 /// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
 @mixin border-radius($radius: 5px) {
   -webkit-border-radius: $radius;

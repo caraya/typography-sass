@@ -5,7 +5,8 @@
 
 
 
-/// Generates the necessary font-face declarations to handle most, if not all modern browsers. The only browsers not supported by the mixin are those that require eot lite
+/// Generates Google Font links only if a given variable is available
+///
 /// @example css styles
 ///body {
 ///  font-family: $stack-lato;
