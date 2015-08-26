@@ -81,7 +81,7 @@
         },
         // These files will get pushed to the `
         // gh-pages` branch (the default)
-        src: ['**/*.scss'],
+        src: ['**/*'],
       },
 
       // OPTIONAL TASKS //
