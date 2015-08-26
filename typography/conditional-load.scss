@@ -8,13 +8,13 @@
 /// Generates Google Font links only if a given variable is available
 ///
 /// @example css styles
-///body {
+/// body {
 ///  font-family: $stack-lato;
-///}
+/// }
 ///
-///h1 {
+/// h1 {
 ///  font-family: $stack-pt-serif;
-///}
+/// }
 /// @access public
 @function conditional_font_load {
   $font-google-prim : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700';
