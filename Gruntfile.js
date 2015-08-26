@@ -115,12 +115,11 @@
       'gh-pages': {
         options: {
           message: 'Content committed from Grunt gh-pages',
-          base: 'sassdocs',
           dotfiles: true
         },
         // These files will get pushed to the `
         // gh-pages` branch (the default)
-        src: [ '**/*' ]
+        src: [ 'sassdocs/**/*' ]
       },
 
       // OPTIONAL TASKS //

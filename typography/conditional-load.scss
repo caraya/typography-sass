@@ -3,12 +3,6 @@
 /// @author [Carlos Araya](http://publishing-project.rivendellweb.net/)
 ////
 
-$font-google-prim : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700';
-$font-google-sec  : 'http://fonts.googleapis.com/css?family=PT+Serif:400,700';
-
-// Font Stacks
-$stack-lato       : 'Lato', sans-serif;
-$stack-pt-serif   : 'PT Serif', serif;
 
 
 /// Generates the necessary font-face declarations to handle most, if not all modern browsers. The only browsers not supported by the mixin are those that require eot lite
@@ -21,11 +15,19 @@ $stack-pt-serif   : 'PT Serif', serif;
 ///  font-family: $stack-pt-serif;
 ///}
 /// @access public
-@if variable-exists(font-google-prim) {
-  @import url($font-google-prim);
-}
-@if variable-exists(font-google-sec) {
-  @import url($font-google-sec);
-}
+@function conditional_font_load {
+  $font-google-prim : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700';
+  $font-google-sec  : 'http://fonts.googleapis.com/css?family=PT+Serif:400,700';
 
+  // Font Stacks
+  $stack-lato       : 'Lato', sans-serif;
+  $stack-pt-serif   : 'PT Serif', serif;
+  @if variable-exists(font-google-prim) {
+    @import url($font-google-prim);
+  }
+
+  @if variable-exists(font-google-sec) {
+    @import url($font-google-sec);
+  }
+}
 

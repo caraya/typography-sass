@@ -1,8 +1,11 @@
-// MIXINS AND UTILITY FUNCTIONS
+////
+/// @group Mixins
+/// @author [Carlos Araya](http://publishing-project.rivendellweb.net/)
+////
 
 
-// THIS MIXIN ELIMINATES FONT LIGATURES AND KERNING
-// USED FOR SMALLER FORM FACTORS
+/// Eliminates ligatures and kearnings in devices with width of less than 480 pixels and smaller form factors
+/// @access public
 @mixin phone-rendering () {
   @media screen and (max-device-width: 480px) {
   body {
@@ -10,17 +13,19 @@
     }
   }
 }
-// CREATES A SOLID THIN BACKROUND
+
+
+/// Creates a 1 pixel solid border
+/// @access public
 @mixin solid-thin() {
   border-width: thin;
   border-style: solid;
 }
 
 
-// The following mixins are from
-// http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
-
-// CLEARFIX
+/// Basic clearfix
+/// @access public
+/// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
 @mixin cf {
   &:after {
     content: " ";
@@ -29,21 +34,31 @@
   }
 }
 
-// BORDER RADIUS
-@mixin border-radius($radius) {
+/// Border radius mixin to keep your code DRY
+/// @access public
+/// @parameter $radius [5px] - how much radius
+/// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+@mixin border-radius($radius: 5px) {
   -webkit-border-radius: $radius;
           border-radius: $radius;
   /* stops bg color from leaking outside the border: */
   background-clip: padding-box;
 }
 
-// CENTER A BLOCK ELEMENT
+/// Centers a block element
+/// @access public
+/// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
 @mixin center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+/// Clever way to provide width and height for an element
+/// @access public
+/// @parameter $width [null] - How wide
+/// @parameter $height [$width] - How hight. Defaults to the width
+/// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;

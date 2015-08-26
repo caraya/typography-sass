@@ -5,7 +5,7 @@
 
 // Max breakpoint
 $max-breakpoint: 1025;
-$wide-screen: "(min-width: #{$max-breakpoint}px)"; 
+$wide-screen: "(min-width: #{$max-breakpoint}px)";
 
 /// @access public
 /// @example scss
@@ -24,7 +24,7 @@ $wide-screen: "(min-width: #{$max-breakpoint}px)";
 /// @access public
 /// @param {String} $size - Target size for conversion
 /// @link http://sassbreak.com/viewport-relative-headings-with-sass
-  font-size: get-vw($size);
+@function font-size: get-vw($size);
   // Prevent font-size from getting too big
   @media #{$wide-screen} {
     font-size: $size;
