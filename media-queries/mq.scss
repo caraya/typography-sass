@@ -9,7 +9,7 @@
 /// @param {String} $orientation [all] - device orientation.
 /// @param {String} $deviceMinWidth [320px] - no smaller than
 /// @param {String} $deviceMaxWidth [480px] - no bigger than
-/// @param {String} $devicePixelRatio [20px] - pixel density (retina or not)
+/// @param {String} $devicePixelRatio [1] - pixel density (retina or not)
 @mixin generic-mq(
   $orientation: all,
   $deviceMinWidth: 320px,

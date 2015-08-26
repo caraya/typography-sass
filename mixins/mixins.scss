@@ -23,16 +23,30 @@
 }
 
 
-/// Basic clearfix
+/// Basic clearfix. Might change to a placeholder to be extended rather than a mixin to be included
+/// @example scss Usage
+///  .article {
+///    font-size: 1em;
+///    @include cf();
+///  }
+/// @example css Result
+///  .article {
+///    font-size: 1em; }
+///  .article:after {
+///    content: " ";
+///    display: block;
+///    clear: both;
+///  }
 /// @access public
 /// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
-@mixin cf {
+@mixin cf() {
   &:after {
     content: " ";
     display: block;
     clear: both;
   }
 }
+
 
 /// Border radius mixin to keep your code DRY
 /// @access public
@@ -48,7 +62,7 @@
 /// Centers a block element
 /// @access public
 /// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
-@mixin center-block {
+%center-block {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -62,5 +76,40 @@
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;
+}
+
+/// This mixin automates the use of 2x retina images for devices that can handle them.
+///
+/// We could also do this as an unprefixed version and just use Autoprefixer, I leave that up to you
+/// @example scss Usage
+///   div.logo {
+///     background: url("logo.png") no-repeat;
+///     @include image-2x("logo2x.png", 100px, 25px);
+///    }
+/// @example css Result
+///   div.logo {
+///     background: url("logo.png") no-repeat;
+///   }
+///   @media
+///     (min--moz-device-pixel-ratio: 1.3),
+///     (-o-min-device-pixel-ratio: 2.6 / 2),
+///     (-webkit-min-device-pixel-ratio: 1.3),
+///     (min-device-pixel-ratio: 1.3),
+///     (min-resolution: 1.3dppx) {
+///       div.logo {
+///         /* on retina, use image that's scaled by 2 */
+///         background-image: url("logo2x.png");
+///         background-size: 100px 25px;
+///       }
+///     }
+/// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+/// @link https://css-tricks.com/box-sizing/
+/// @link https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+/// @link http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+/// @link http://www.w3.org/TR/css3-ui/
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+     -moz-box-sizing: $box-model; // Firefox <= 19
+          box-sizing: $box-model;
 }
 

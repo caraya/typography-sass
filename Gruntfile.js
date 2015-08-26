@@ -26,6 +26,8 @@
             expand: true,
             cwd: '.',
             src: [
+              'programming/*.scss',
+              'images/*.scss',
               'vfx/*.scss',
               'typography/*.scss',
               'code/*.scss',
@@ -48,6 +50,8 @@
             expand: true,
             cwd: 'sass',
             src: [
+              'programming/*.scss',
+              'images/*.scss',
               'vfx/*.scss',
               'typography/*.scss',
               'code/*.scss',
@@ -72,6 +76,8 @@
       // I've chosen not to fail on errors or warnings.
       scsslint: {
         src: [
+          'programming/*.scss',
+          'images/*.scss',
           'vfx/*.scss',
           'typography/*.scss',
           'code/*.scss',
@@ -91,6 +97,8 @@
       sassdoc: {
         all: {
           src: [
+            'programming/*.scss',
+            'images/*.scss',
             'vfx/*.scss',
             'typography/*.scss',
             'code/*.scss',
@@ -130,7 +138,17 @@
       // This saves us from doing the work manually
       autoprefixer: {
         options: {
-          browsers: [ 'last 2 versions', 'ie8', 'ie9' ]
+          browsers: [
+            'ie >= 10',
+            'ie_mob >= 10',
+            'ff >= 30',
+            'chrome >= 34',
+            'safari >= 7',
+            'opera >= 23',
+            'ios >= 7',
+            'android >= 4.4',
+            'bb >= 10'
+          ]
         },
 
         files: {

@@ -1,0 +1,41 @@
+////
+/// @group Programming Utilities
+/// @author [Carlos Araya](http://publishing-project.rivendellweb.net/)
+////
+
+/// This function checks if the parameters (function names) are available in the given context
+/// @example scss Usage
+///  @function dummy() {
+///    @if missing-dependencies(my-function, my-other-function) {
+///        @warn "Oops! Missing some functions for `dummy`!";
+///        @return null;
+///    }
+///
+///    // `dummy` function's core,
+///    // obviously needing `my-function` and `my-other-function` to work.
+///  }
+/// @link http://webdesign.tutsplus.com/tutorials/how-to-check-for-dependencies-in-sass-libraries--cms-21558
+/// @parameter {String} $dependencies - Name of the functions to test
+@function missing-dependencies ($dependencies...) {
+    $missing-dependencies: ();
+
+    @each $dependency in $dependencies {
+        $type: "function"; // Default type of dependency
+
+        @if length($dependency) == 2 {
+            $type: nth($dependency, 1);
+            $type: if(index("function" "mixin" "variable", $type), $type, "function");
+            $dependency: nth($dependency, 2);
+        }
+
+        @if not call("#{$type}-exists", $dependency) {
+            $missing-dependencies: append($missing-dependencies, $dependency, comma);
+        }
+    }
+
+    @if length($missing-dependencies) > 0 {
+        @warn "Unmet dependencies! The following dependencies are required: #{$missing-dependencies}.";
+    }
+
+    @return $missing-dependencies != 0;
+}

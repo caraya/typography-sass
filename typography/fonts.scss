@@ -93,5 +93,62 @@
   src: local('#{$font-file-name}.ttf') format('truetype');
   font-weight: $weight;
   font-style: $style;
-
 }
+
+/// Sets font size in rem with px fallback
+/// @access public
+/// @example scss Usage
+///  body {
+///    @include fontSize(16px);
+///  }
+/// @example css Result
+///  body {
+///    font-size: 16px;
+///    font-size: 1rem;
+///  }
+/// @link http://web-design-weekly.com/2013/05/12/handy-sass-mixins/
+/// @link http://snook.ca/archives/html_and_css/font-size-with-rem
+/// @link http://www.stubbornella.org/content/2013/07/01/easy-peasy-rem-conversion-with-sass/
+/// @link http://techtime.getharvest.com/blog/in-defense-of-rem-units
+/// @param {String} $size [16px] - Font size in pixels
+/// @see {mixin} fontSizeEm
+@mixin fontSizeRem($size: 16px) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+/// Auxiliary function that does the actual conversion from pixel to rem
+/// @access public
+/// @param {Integer} $size - Font size
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+/// Sets font size in em with px fallback
+/// @access public
+/// @example scss Usage
+///  body {
+///    @include fontSizeEm(48);
+///  }
+/// @example css Result
+///  body {
+///    font-size: 48px;
+///    font-size: 3em;
+///  }
+/// @link https://web-design-weekly.com/snippets/converts-pixels-to-ems-with-sass/
+/// @param {Integer} $size [16] - Font size in pixels
+/// @see {mixin} fontSizeRem
+@mixin fontSizeEm($pixels){
+  font-size: $pixels; // Fallback in px
+  font-size: calculateEm($pixels);
+}
+
+/// Auxiliary function that does the actual conversion from pixel to rem
+/// @access public
+/// @param {Integer} $size - Font size
+/// @param {Integer} $context [16]- Base value for calculation
+@function calculateEm($pixels, $context: 16) {
+  @return #{$pixels/$context}em
+}
+
