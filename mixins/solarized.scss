@@ -24,10 +24,18 @@ $blue:      rgb(38, 139, 210);
 $cyan:      rgb(42, 161, 152);
 $green:     rgb(133, 153, 0);
 
+
+/// Solarized dark color/background combination
+/// @access public
+/// @link http://ethanschoonover.com/solarized
 @mixin solarized-dark() {
     background-color: $base03;
     color: $base0;
 }
+
+/// Solarized light color/background combination
+/// @access public
+/// @link http://ethanschoonover.com/solarized
 @mixin solarized-light() {
     background-color: $base3;
     color: $base00;
