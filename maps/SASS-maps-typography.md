@@ -39,7 +39,7 @@ And the result for Vimeo (using the $sm-profiles map and the function discussed 
 .profile-link--vimeo:hover {
   background: #aad450;
 }
-
+```
 
 
 ## Applying maps to typography
