@@ -40,4 +40,34 @@ $snarky-grad: linear-gradient(orange 75%, blue);
   background-blend-mode: $blend;
 }
 
-
+/// Provides a basic css blend  between 2 images (can be increased to more)
+/// @link http://publishing-project.rivendellweb.net/getting-fancy-blend-modes/
+/// @access public
+/// @param {String} $img1 [null]- image to blend.
+/// @param {String} $img2 [null] - image to blend.
+/// @param {String} $bgrepeat1 [repeat-x] - First image background repeat
+/// @param {String} $bgrepeat2 [no-repeat] - Second image background repeat
+/// @param {String} $bgsize1 [auto] - Size of the first image's background
+/// @param {String} $bgsize2 [auto] - Size of the second image's background
+/// @param {String} $position1 [center bottom] - Position of the first image
+/// @param {String} $position2 [left top] - Position of the second image
+/// @param {String} $bg-blendmode1 [multiply] - Blend mode for the first image
+/// @param {String} $bg-blendmode2 [normal] - Blend mode for the second image
+@mixin img-blendy(
+  $img1: null,   $img2: null,
+  $bgrepeat1: repeat-x, $bgrepeat2: no-repeat,
+  $bgsize1: auto, $bgsize2: auto,
+  $bgposition1: center bottom, $bgposition2: left top,
+  $bg-blendmode1: multiply, $bg-blendmode2: normal {
+    @if (variable-exists($img1) and variable-exists($img2)){
+      background: url(#{img1}), url(#{img2});
+    }
+    @else {
+      @error "one or both of #{$img1} and #{$img2} not found. Both are needed for the blend";
+    }
+    background-repeat: $bgrepeat1 $bgrepeat2;
+    background-size: $bgsize1 $bgsize2;
+    background-position: $bgposition1 $bgposition2;
+    background-blend-mode: $bg-blendmode1 $bg-blendmode2;
+  }
+)
