@@ -63,7 +63,7 @@ $snarky-grad: linear-gradient(orange 75%, blue);
       background: url(#{img1}), url(#{img2});
     }
     @else {
-      @error "one or both of #{$img1} and #{$img2} not found. Both are needed for the blend";
+      @error "one or both of `#{$img1}` and `#{$img2}` not found. Both are needed for the blend";
     }
     background-repeat: $bgrepeat1 $bgrepeat2;
     background-size: $bgsize1 $bgsize2;
