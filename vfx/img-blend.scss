@@ -16,7 +16,7 @@
 /// @param {String} $position2 [left top] - Position of the second image
 /// @param {String} $bg-blendmode1 [multiply] - Blend mode for the first image
 /// @param {String} $bg-blendmode2 [normal] - Blend mode for the second image
-@mixin img-blendy(
+@mixin imgBlendy(
   $img1: null,   $img2: null,
   $bgrepeat1: repeat-x, $bgrepeat2: no-repeat,
   $bgsize1: auto, $bgsize2: auto,
@@ -34,3 +34,11 @@
     background-blend-mode: $bg-blendmode1 $bg-blendmode2;
   }
 )
+
+.img-blend {
+  @include imgBlendy (
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/32795/checkerboard.jpg,
+    https://s3-us-west-2.amazonaws.com/s.cdpn.io/32795/dunetocat.png
+  );
+  width: 90%;
+}
