@@ -21,7 +21,7 @@
   $bgrepeat1: repeat-x, $bgrepeat2: no-repeat,
   $bgsize1: auto, $bgsize2: auto,
   $bgposition1: center bottom, $bgposition2: left top,
-  $bg-blendmode1: multiply, $bg-blendmode2: normal {
+  $bg-blendmode1: multiply, $bg-blendmode2: normal) {
     @if (variable-exists($img1) and variable-exists($img2)){
       background: url(#{img1}), url(#{img2});
     }
@@ -33,7 +33,7 @@
     background-position: $bgposition1 $bgposition2;
     background-blend-mode: $bg-blendmode1 $bg-blendmode2;
   }
-)
+
 
 .img-blend {
   @include imgBlendy (
