@@ -4,10 +4,10 @@
 # https://github.com/npm/npm/issues/3958
 # http://stackoverflow.com/questions/21128478/run-grunt-build-command-on-travis-ci 
 language: node_js
-node_js: '0.12'
+node_js: '0.12.0'
 before_install:
   # install scsslint gem to make the grunt task happy
-  - gem install scss-lint
+  - gem install scss_lint
   # why do we need to install npm, doesn't it come with node?
   - npm install -g npm
   # Install grunt and grunt-cli globally
